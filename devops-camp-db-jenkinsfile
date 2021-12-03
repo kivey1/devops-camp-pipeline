@@ -13,7 +13,7 @@ pipeline {
         stage('Application repository') {
             steps {
                 echo "Cloning application repository"
-                sh 'git clone https://github.com/kivey1/afs-labs-student.git/'
+                sh 'git clone https://github.com/kivey1/afs-labs-student.git'
                 dir('afs-labs-student') {
                     script {
                         env.DB_HASH = sh(script: 'git log --format=format:%h -1 --follow database/database.sql', returnStdout: true).trim()
